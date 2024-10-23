@@ -1,0 +1,159 @@
+{
+    "info": {
+        "name": "Twilio Group Call API",
+        "description": "Collection for managing calls and conferences using Twilio with Flask.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Get Token",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/token",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "token"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Create Conference",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    }
+                ],
+                "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": [
+                        {
+                            "key": "conference_name",
+                            "value": "MyConference",
+                            "description": "Name of the conference to create or join."
+                        }
+                    ]
+                },
+                "url": {
+                    "raw": "http://localhost:3000/create_conference",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "create_conference"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Join Conference",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    }
+                ],
+                "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": [
+                        {
+                            "key": "conference_name",
+                            "value": "MyConference",
+                            "description": "The name of the conference to join."
+                        },
+                        {
+                            "key": "from",
+                            "value": "+1234567890",
+                            "description": "Your Twilio phone number or a caller ID to display."
+                        },
+                        {
+                            "key": "to",
+                            "value": "+0987654321",
+                            "description": "Phone number of the participant to join in the conference."
+                        }
+                    ]
+                },
+                "url": {
+                    "raw": "http://localhost:3000/join_conference",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "join_conference"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Handle Calls",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                    }
+                ],
+                "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": [
+                        {
+                            "key": "To",
+                            "value": "+0987654321",
+                            "description": "Phone number to call. Use the Twilio number for incoming call simulation."
+                        },
+                        {
+                            "key": "Caller",
+                            "value": "+1234567890",
+                            "description": "The phone number of the caller."
+                        }
+                    ]
+                },
+                "url": {
+                    "raw": "http://localhost:3000/handle_calls",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "handle_calls"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "List Conferences",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/list_conferences",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "list_conferences"
+                    ]
+                }
+            }
+        }
+    ]
+}
